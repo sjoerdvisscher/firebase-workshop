@@ -1,0 +1,21 @@
+{
+  "name": "firebase-workshop",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.14.5",
+    "html-loader": "^0.3.0",
+    "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3",
+    "vue": "^0.12.4",
+    "vue-fire": "^0.1.0",
+    "vue-loader": "^2.0.1",
+    "webpack": "^1.10.0"
+  }
+}
