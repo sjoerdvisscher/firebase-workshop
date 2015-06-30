@@ -9,10 +9,15 @@ h1 {
 </style>
 
 <script>
+var firebaseMixin = require('vue-fire').mixin;
+
 module.exports = {
-  data: function() {
+  mixins: [firebaseMixin],
+  firebase: function (root) {
     return {
-      name: 'Kars'
+      values: [
+        'name'
+      ]
     }
   }
 }
