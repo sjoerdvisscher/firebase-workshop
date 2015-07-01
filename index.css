@@ -1,4 +1,4 @@
-#clients {
+#items {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,14 +7,14 @@
   font-family: arial;
   margin: 5vw
 }
-#clients div {
+#items div {
   position: absolute;
-  background: url(quek.gif) no-repeat center;
+  background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
   height: 100%;
 }
-#clients div * {
+#items div * {
   position: absolute;
   top: 100%;
   left: -100%;
@@ -23,4 +23,15 @@
   font-weight: bold;
   background: none;
   border: none;
+}
+#items div.client {
+  background-image: url(quek.gif);
+}
+#items div.bomb {
+  background-image: url(bomb.png);
+}
+#items div.fire {
+  background-image: url(fire.jpg);
+  background-repeat: repeat;
+  border-radius: 5vw;
 }
