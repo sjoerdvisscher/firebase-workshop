@@ -1,0 +1,26 @@
+#clients {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4vw;
+  height: 4vw;
+  font-family: arial;
+  margin: 5vw
+}
+#clients div {
+  position: absolute;
+  background: url(quek.gif) no-repeat center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+#clients div * {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  width: 300%;
+  text-align: center;
+  font-weight: bold;
+  background: none;
+  border: none;
+}
