@@ -12,7 +12,7 @@ var view = {
     div.find(".name").text(item.name).append("<br>" + item.lives + " lives / " + item.kills + " kills");
   },
   removeClient: function(id) {
-    $('#client' + snapshot.key()).remove();
+    $('#client' + id).remove();
   },
   createBomb: function (item) {
     var div = $('<div>').appendTo('#items').addClass('bomb').css({
