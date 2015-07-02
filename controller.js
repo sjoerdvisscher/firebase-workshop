@@ -1,5 +1,7 @@
+var Root = new Firebase("https://luminous-inferno-5857.firebaseio.com/");
+// Login into google.
+
 var lastBombTime = new Date();
-var name = prompt("What's your name?");
 
 model.onBombAdded = function(item) {
   var trigger = view.createBomb(item);
@@ -23,15 +25,6 @@ model.onBombAdded = function(item) {
 model.onClientAdded = view.createClient;
 model.onClientChanged = view.updateClient;
 model.onClientRemoved = view.removeClient;
-
-var me = {
-  name: name,
-  lives: 5,
-  kills: 0,
-  x: Math.floor(Math.random()*20),
-  y: Math.floor(Math.random()*10)
-};
-model.createMe(me);
 
 $(window).on('unload', function() {
   model.removeMe();
@@ -59,4 +52,26 @@ $(document.body).on('keydown', function(evt) {
       return;
   }
   model.updateMe(me);
-})
+});
+
+
+var me;
+var $loginButton = $('.login-link');
+$loginButton.on( 'click', function() {
+  Root.authWithOAuthPopup("google", function(error, authData) {
+    if(error) {
+      console.error('stuff ging fout', error);
+      return;
+    }
+     me = {
+      name: authData.google.displayName,
+      lives: 5,
+      kills: 0,
+      x: Math.floor(Math.random()*20),
+      y: Math.floor(Math.random()*10)
+    };
+    model.createMe(me);
+    $loginButton.hide();
+  });
+});
+
